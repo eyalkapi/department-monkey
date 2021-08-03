@@ -1,0 +1,27 @@
+{
+  "name": "department-monkey",
+  "version": "1.0.0",
+  "description": "bot that adds music to queue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eyalkapi/department-monkey.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eyalkapi/department-monkey/issues"
+  },
+  "homepage": "https://github.com/eyalkapi/department-monkey#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "puppeteer": "^10.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
