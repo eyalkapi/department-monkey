@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Project Management Dashboard UI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./static/css/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+  <div class="app-container">
+    <div class="app-content">
+
+      <!-- start servers -->
+      <div class="projects-section">
+        <div class="projects-section-header">
+          <p>Projects</p>
+          <p class="time">December, 12</p>
+        </div>
+        <div class="projects-section-line">
+          <div class="view-actions">
+            <button class="view-btn list-view" title="List View">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
+                <line x1="8" y1="6" x2="21" y2="6" />
+                <line x1="8" y1="12" x2="21" y2="12" />
+                <line x1="8" y1="18" x2="21" y2="18" />
+                <line x1="3" y1="6" x2="3.01" y2="6" />
+                <line x1="3" y1="12" x2="3.01" y2="12" />
+                <line x1="3" y1="18" x2="3.01" y2="18" />
+              </svg>
+            </button>
+            <button class="view-btn grid-view active" title="Grid View">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="project-boxes jsGridView">
+
+          <!-- start servers box -->
+          {% for server in all_servers %}
+          <div class="project-box-wrapper">
+            <div class="project-box" style="background-color: #d5deff;">
+              <div class="project-box-header">
+                <div class="more-wrapper">
+                  <button class="project-btn-more">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                      <circle cx="12" cy="12" r="1" />
+                      <circle cx="12" cy="5" r="1" />
+                      <circle cx="12" cy="19" r="1" /></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="project-box-content-header">
+                <p class="box-content-header">{{ server }}</p>
+                <p class="box-content-subheader">{{ all_servers[server].type }}\{{ all_servers[server].technology }}</p>
+              </div>
+              <div class="project-box-footer">
+                <div class="participants">
+                  <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+                  <img src="https://images.unsplash.com/photo-1583195764036-6dc248ac07d9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2555&q=80" alt="participant">
+                  <button class="add-participant" style="color: #4067f9;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                      <path d="M12 5v14M5 12h14" />
+                    </svg>
+                  </button>
+                </div>
+                <div class="days-left" style="color: #4067f9;">
+                  {{ all_servers[server].connections }} connections
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <!-- end servers box -->
+          
+
+
+
+
+        </div>
+      </div>
+      <!-- end servers -->
+
+
+      <!-- start connections -->
+      <div class="projects-section">
+        <div class="projects-section-header">
+          <p>Projects</p>
+          <p class="time">December, 12</p>
+        </div>
+        <div class="projects-section-line">
+          <div class="view-actions">
+            <button class="view-btn list-view" title="List View">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
+                <line x1="8" y1="6" x2="21" y2="6" />
+                <line x1="8" y1="12" x2="21" y2="12" />
+                <line x1="8" y1="18" x2="21" y2="18" />
+                <line x1="3" y1="6" x2="3.01" y2="6" />
+                <line x1="3" y1="12" x2="3.01" y2="12" />
+                <line x1="3" y1="18" x2="3.01" y2="18" />
+              </svg>
+            </button>
+            <button class="view-btn grid-view active" title="Grid View">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="project-boxes jsGridView">
+
+          <!-- start connections box -->
+          {% for connection in all_connections %}
+          <div class="project-box-wrapper">
+            <div class="project-box" style="background-color: #d5deff;">
+              <div class="project-box-header">
+                <div class="more-wrapper">
+                  <button class="project-btn-more">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                      <circle cx="12" cy="12" r="1" />
+                      <circle cx="12" cy="5" r="1" />
+                      <circle cx="12" cy="19" r="1" /></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="project-box-content-header">
+                <p class="box-content-header">{{ connection }}</p>
+                <p class="box-content-subheader">{{ all_connections[connection].src }} {% if all_connections[connection].direction == 'one-way' %} -> {% else %} <-> {% endif %} ->  {{ all_connections[connection].dst }}</p>
+              </div>
+              <div class="project-box-footer">
+                <div class="participants">
+                  <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+                  <img src="https://images.unsplash.com/photo-1583195764036-6dc248ac07d9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2555&q=80" alt="participant">
+                  <button class="add-participant" style="color: #4067f9;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                      <path d="M12 5v14M5 12h14" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <!-- end box -->
+          
+
+
+
+
+        </div>
+      </div>
+      <!-- end connections -->
+    </div>
+
+
+
+    <table class="row">
+      <tr>
+        <td>
+      <!-- start connection form -->
+      <div class="project-box-wrapper col-xl-2" style="right: 2rem; width: 20%;">
+        <div class="project-box" style="background-color: #fee4cb;">
+          <div class="project-box-header">
+            <span>Add new Connection</span>
+          </div>
+          <div class="project-box-content-header">
+            <form action="/addConnection" id="addNewConnectionForm" method="POST">
+              <label id="nameLabel">Connection Name</label>
+              <input type="text" name="name">
+              <br>
+              <label id="srcLabel">Source Server</label>
+              <select name="src" name=>
+                {% for server in all_servers %}
+                  <option value="{{ server }}">{{ server }}</option>
+                {% endfor %}
+              </select>
+              <br>
+              <label id="dstLabel">Destination Server</label>
+              <select name="dst" name=>
+                {% for server in all_servers %}
+                  <option value="{{ server }}">{{ server }}</option>
+                {% endfor %}
+              </select>
+              <br>
+              <label id="portsLabel">Ports</label>
+              <input type="text" name="ports">
+              <br>
+              <label id="protocolsLabel">Protocols</label>
+              <input type="text" name="protocols">
+              <br>
+              <label id="directionLabel">Direction(bi-directional?)</label>
+              <select name="direction">
+                <option value="one-way">only the source initiates the connection</option>
+                <option value="two-way">both sides initiate the connection</option>
+              </select>
+
+              <br>
+              <button type="submit" id="submitNewConnection">Add Connection</button>
+            </form>
+          </div>
+
+
+          
+          <div class="project-box-footer">
+            <div class="participants">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+              <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+              <button class="add-participant" style="color: #ff942e;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </button>
+            </div>
+            <div class="days-left" style="color: #ff942e;">
+              2 Days Left
+            </div>
+          </div>
+        </div>
+      </div>
+    </td>
+      <!-- end connection form -->
+
+      <!-- start server form -->
+      <td>
+      <div class="project-box-wrapper col-xl-8" style="right: 2rem; width: 20%;">
+        <div class="project-box" style="background-color: #fee4cb;">
+          <div class="project-box-header">
+            <span>Add new Server</span>
+          </div>
+          <div class="project-box-content-header">
+            <form action="/addServer" id="addNewServerForm" method="POST">
+              <label id="nameLabel">Server Name</label>
+              <input type="text" name="name">
+              <br>
+              <label id="platformLabel">Platform</label>
+              <select name="platform" name=>
+                <option value="Linux">Linux</option>
+                <option value="Windown">Windows</option>
+              </select>
+              <br>
+              <label id="typeLabel">Server Type</label>
+              <select name="type">
+                <option value="Database">Database</option>
+                <option value="Application">Application</option>
+                <option value="API">API</option>
+              </select>
+              <br>
+              <label id="technologyLabel">Technology</label>
+              <input type="text" name="technology">
+              <br>
+              <label id="descriptionLabel">Description</label>
+              <textarea  name="description"></textarea>
+              <br>
+              <button type="submit" id="submitNewServer">Add Server</button>
+            </form>
+          </div>
+
+
+          
+          <div class="project-box-footer">
+            <div class="participants">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
+              <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+              <button class="add-participant" style="color: #ff942e;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </button>
+            </div>
+            <div class="days-left" style="color: #ff942e;">
+              2 Days Left
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end server form -->
+    </td>
+    </tr>
+    </table>
+
+
+  </div>
+<!-- partial -->
+  <script  src="./static/js/script.js"></script>
+
+</body>
+</html>
